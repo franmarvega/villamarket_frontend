@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react'
 import { StyleSheet, Text, View, ActivityIndicator  } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-import { getItems } from '@/store/redux/slices/exampleSlice'
+import { getItems } from '@/features/hello/helloSlice'
 
-const MainScreen = () => {
+const MainView = () => {
   const dispatch = useDispatch();
-  const { data, loading, error } = useSelector((state) => state.example);
+  const { data, loading, error } = useSelector((state) => state.hello)
 
   // Llamar a la API cuando el componente se monta
   useEffect(() => {
     console.log('AQUI')
-    dispatch(getItems());
-  }, [dispatch]);
+    dispatch(getItems())
+  }, [dispatch])
 
   if (loading) {
-    return <ActivityIndicator size="large" color="#0000ff" />;
+    return <ActivityIndicator size="large" color="#0000ff" />
   }
 
   if (error) {
@@ -22,7 +22,7 @@ const MainScreen = () => {
       <View>
         <Text>Error: {error}</Text>
       </View>
-    );
+    )
   }
 
   return (
@@ -38,4 +38,4 @@ const MainScreen = () => {
 
 
 
-export default MainScreen;
+export default MainView

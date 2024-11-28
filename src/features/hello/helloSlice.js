@@ -1,22 +1,18 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import villaMarketApi from '@/utils/apiEndpoint'
+import { helloApi } from './helloService'
 
 // Acción asíncrona para llamar a una API
 export const getItems = createAsyncThunk('example/getItems', async (_, { rejectWithValue }) => {
-  console.log('Inicio slice')
   try {
-    console.log('antes de la api')
-    console.log(villaMarketApi)
-    const response = await villaMarketApi.get('/hello/')
-    console.log(response.data)
+    const response = await helloApi()
     return response.data
   } catch (error) {
-    return rejectWithValue(error.message)
+    return rejectWithValue(error.response?.data || 'Error inesperado')
   }
 });
 
-const exampleSlice = createSlice({
-  name: 'example',
+const helloSlice = createSlice({
+  name: 'hello',
   initialState: {
     data: null,
     loading: false,
@@ -40,4 +36,4 @@ const exampleSlice = createSlice({
   },
 });
 
-export default exampleSlice.reducer;
+export default helloSlice.reducer;

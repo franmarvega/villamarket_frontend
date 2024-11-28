@@ -1,14 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux'
 import { StyleSheet, View } from 'react-native'
-import store from '@/store/redux/store'
-import MainScreen from '@/MainScreen'
+import store from '@/redux/store'
+import MainView from '@/views/MainView'
 
 export default function App() {
   return (
     <Provider store={store}>
       <View style={styles.container}>
-        <MainScreen/>
+        <MainView/>
       </View>
     </Provider>
   );
