@@ -1,7 +1,7 @@
 {
   "name": "villamarket_front",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -9,15 +9,17 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.3.0",
+    "axios": "^1.7.8",
     "expo": "~52.0.11",
     "expo-status-bar": "~2.0.0",
     "react": "18.3.1",
-    "react-native": "0.76.3"
+    "react-native": "0.76.3",
+    "react-native-dotenv": "^3.4.11",
+    "react-redux": "^9.1.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@types/react": "~18.3.12",
-    "typescript": "^5.3.3"
+    "@babel/core": "^7.25.2"
   },
   "private": true
 }
