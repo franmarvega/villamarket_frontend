@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { StyleSheet, Text, View, ActivityIndicator  } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { getItems } from '@/features/hello/helloSlice'
+import { Button, ButtonText } from '@/../components/ui/button'
 
 const MainView = () => {
   const dispatch = useDispatch();
@@ -28,7 +29,12 @@ const MainView = () => {
   return (
     <View>
       {data ? (
-        <Text>Respuesta del servidor: {JSON.stringify(data)}</Text>
+        <>
+          <Text>Respuesta del servidor: {JSON.stringify(data)}</Text>
+          <Button size="md" variant="solid" action="primary">
+            <ButtonText>Hello World!</ButtonText>
+          </Button>
+        </>
       ) : (
         <Text>No hay datos disponibles</Text>
       )}
