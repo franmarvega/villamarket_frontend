@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
-import { StyleSheet, Text, View, ActivityIndicator  } from 'react-native'
-import { useDispatch, useSelector } from 'react-redux'
-import { getItems } from '@/features/hello/helloSlice'
-import { Button, ButtonText } from '@/../components/ui/button'
+import React, { useEffect } from "react"
+import { StyleSheet, Text, View, ActivityIndicator  } from "react-native"
+import { useDispatch, useSelector } from "react-redux"
+import { getItems } from "@/features/hello/helloSlice"
+import { Button, ButtonText } from "@/../components/ui/button"
+import "../../global.css"
 
 const MainView = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const MainView = () => {
 
   // Llamar a la API cuando el componente se monta
   useEffect(() => {
-    console.log('AQUI')
+    console.log("AQUI")
     dispatch(getItems())
   }, [dispatch])
 
@@ -31,8 +32,12 @@ const MainView = () => {
       {data ? (
         <>
           <Text>Respuesta del servidor: {JSON.stringify(data)}</Text>
-          <Button size="md" variant="solid" action="primary">
-            <ButtonText>Hello World!</ButtonText>
+          <Button
+            size="md"
+            variant="solid"
+            className="rounded-lg px-6 py-3"
+          >
+            <ButtonText className="text-white">Hello World!</ButtonText>
           </Button>
         </>
       ) : (

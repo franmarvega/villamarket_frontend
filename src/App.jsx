@@ -1,10 +1,11 @@
-import React from 'react';
-import { Provider } from 'react-redux'
+import React from "react";
+import { Provider } from "react-redux"
 import { GluestackUIProvider } from "@/../components/ui/gluestack-ui-provider";
-import { StyleSheet, View } from 'react-native'
-import store from '@/redux/store'
-import MainView from '@/views/MainView'
-import theme from '../gluestack.config'
+import { StyleSheet, View } from "react-native"
+import store from "@/redux/store"
+import MainView from "@/views/MainView"
+import theme from "../gluestack.config"
+import "../global.css"
 
 export default function App() {
   return (
@@ -21,9 +22,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
